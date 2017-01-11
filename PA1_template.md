@@ -136,7 +136,7 @@ summary(df)
 
 At this point, the dataset is ready for further analysis.
 
-## Computation 1 - Mean total number of steps per day
+## Computation 1 - Mean total number of steps taken each day
 
 For this part of the assignment, we ignore the missing values in the dataset.
 
@@ -166,7 +166,7 @@ ggplot(df_comp1, aes(x = date, y = `sum(steps)`)) +
 
 ![](PA1_template_files/figure-html/stepsumhist-1.png)<!-- -->
 
-The calculation of the mean and median of the total number of steps taken per day are as follow:
+The calculation of **the mean and median of the total number of steps taken per day** are as follow:
 
 
 ```r
@@ -207,6 +207,19 @@ ggplot(dfavg, aes(interval, meanSteps)) +
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+**Time series plot of the average number of steps taken**
+
+**The 5-minute interval that, on average, contains the maximum number of steps** is the following:
+
+```r
+dfavg[which.max(dfavg$meanSteps), 1]
+```
+
+```
+## [1] 835
+```
+
 
 ## Inputing missing values
 
@@ -430,4 +443,4 @@ ggplot(dfavg2, aes(x = interval, y = meanSteps)) +
       labs(x = "5-minute intervals", y = "Average Number of Steps Taken")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
